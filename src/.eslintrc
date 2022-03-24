@@ -1,0 +1,110 @@
+{
+    "env": {
+      "es2021": true,
+      "browser": true,
+      "node": true,
+    },
+    "extends": [
+      "eslint:recommended",
+      "airbnb",
+      "prettier",
+      "prettier/prettier",
+      "plugin:react/recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:prettier/recommended",
+      "plugin:import/errors",
+      "plugin:import/warnings",
+      "plugin:import/typescript",
+    ],
+    "plugins": [
+      "react",
+      "@typescript-eslint",
+      "react-hooks",
+      "prettier",
+      "import",
+      "unused-imports"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions":{
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "ecmaVersion": 12
+    },
+    "rules": {
+      "@typescript-eslint/no-use-before-define": "error",
+      "@typescript-eslint/no-empty-interface": "off",
+      "@typescript-eslint/explicit-module-boundary-types": 0,
+      "require-await": "error",
+      "react/jsx-filename-extension": [
+        "error", { "extensions": [".jsx", ".tsx"] }
+      ],
+      "import/extensions": [
+        "error",
+        "ignorePackages",
+        {
+          "js": "never",
+          "jsx": "never",
+          "ts": "never",
+          "tsx": "never"
+        }
+      ],
+      "no-shadow": "off",
+      "@typescript-eslint/no-shadow":[
+        "error"
+      ],
+      "@typescript-eslint/explicit-function-return-type":[
+        "error",
+        {
+          "allowExpressions": true
+        }
+      ],
+      "max-len":[
+        "warn",
+        {
+          "code": 80,
+          "tabWidth": 2,
+          "comments": 1000,
+          "ignoreComments": true,
+          "ignoreTrailingComments": true,
+          "ignoreUrls": true,
+          "ignoreStrings": true,
+          "ignoreTemplateLiterals": true,
+          "ignoreRegExpLiterals": true,
+        }
+      ],
+      "no-param-reassign": 0,
+      "react/no-array-index-key": 0,
+      "newline-before-return": "error",
+      "import/no-extraneous-dependencies": 0,
+      "consistent-return": 0,
+      "react/prefer-stateless-function": 0,
+      "react/react-in-jsx-scope": 0,
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn",
+      "import/prefer-default-export": "off",
+      "react/prop-types": "off",
+      "react/jsx-props-no-spreading": "off",
+      "react/jsx-wrap-multilines": ["error", { "arrow": true, "return": true, "declaration": true }],
+      "unused-imports/no-unused-imports": "error",
+      "no-underscore-dangle": 0,
+      "no-use-before-define": "off",
+      "no-unused-expressions": ["error", { "allowShortCircuit": true }],
+      "explicit-function-return-type": 0,
+      "func-style": ["error", "declaration", { "allowArrowFunctions": true }],
+    },
+    "settings": {
+      "import/parsers": {
+        "@typescript-eslint/parser": [".ts", ".tsx"]
+      },
+      "import/resolver": {
+        "node": {
+            "extensions": [".js", ".jsx", ".ts", ".tsx"]
+          },
+        "typescript": {
+          "alwaysTryTypes": true, // always try to resolve types under `<root>@types` directory even it doesn't contain any source code, like `@types/unist`
+        }
+      },
+    }
+  }
